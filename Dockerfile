@@ -10,8 +10,7 @@ RUN apk add --no-cache --virtual .build-deps yarn git build-base g++ python3
 RUN apk add --no-cache --virtual .npm-deps cairo-dev pango-dev libjpeg-turbo-dev librsvg-dev
 RUN apk add --no-cache --virtual .fonts libmount ttf-dejavu ttf-droid ttf-freefont ttf-liberation font-noto font-noto-emoji fontconfig
 RUN apk add --no-cache --repository https://dl-cdn.alpinelinux.org/alpine/edge/community font-wqy-zenhei
-RUN apk add --no-cache libimagequant-dev
-RUN apk add --no-cache vips-dev
+RUN apk add --no-cache libimagequant-dev vips-dev
 RUN apk add --no-cache --virtual .runtime-deps graphviz
 
 COPY package*.json .
@@ -57,6 +56,8 @@ RUN apk update && \
     font-noto \
     font-noto-emoji && \
     rm -rf /var/cache/apk/*
+
+USER node
 
 WORKDIR /quickchart
 
