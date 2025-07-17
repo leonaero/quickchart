@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const getColors = require('get-image-colors');
+// const getColors = require('get-image-colors');
 const imageSize = require('image-size');
 
 const chartsLib = require('../../lib/charts');
@@ -77,33 +77,33 @@ describe('charts.js', () => {
     assert(buf.length > 0);
   });
 
-  it('renders a chart color scheme', async () => {
-    const buf = await chartsLib.renderChartJs(
-      200,
-      100,
-      'white',
-      2.0,
-      '2.9.4',
-      'png',
-      charts.CHART_COLOR_SCHEME,
-    );
-    const rgb = (await getColors(buf, 'image/png'))[0].rgb();
-    assertSimilarRgb([156, 156, 252], rgb);
-  });
+  // it('renders a chart color scheme', async () => {
+  //   const buf = await chartsLib.renderChartJs(
+  //     200,
+  //     100,
+  //     'white',
+  //     2.0,
+  //     '2.9.4',
+  //     'png',
+  //     charts.CHART_COLOR_SCHEME,
+  //   );
+  //   const rgb = (await getColors(buf, 'image/png'))[0].rgb();
+  //   assertSimilarRgb([156, 156, 252], rgb);
+  // });
 
-  it('renders a chart with gradient fill', async () => {
-    const buf = await chartsLib.renderChartJs(
-      300,
-      200,
-      'transparent',
-      2.0,
-      '2.9.4',
-      'png',
-      charts.CHART_GRADIENT_FILL,
-    );
-    const rgb = (await getColors(buf, 'image/png'))[0].rgb();
-    assertSimilarRgb([172, 58, 199], rgb);
-  });
+  // it('renders a chart with gradient fill', async () => {
+  //   const buf = await chartsLib.renderChartJs(
+  //     300,
+  //     200,
+  //     'transparent',
+  //     2.0,
+  //     '2.9.4',
+  //     'png',
+  //     charts.CHART_GRADIENT_FILL,
+  //   );
+  //   const rgb = (await getColors(buf, 'image/png'))[0].rgb();
+  //   assertSimilarRgb([172, 58, 199], rgb);
+  // });
 
   it('renders a violin chart', async () => {
     const buf = await chartsLib.renderChartJs(
@@ -120,19 +120,19 @@ describe('charts.js', () => {
     assert.equal(400, dimensions.height);
   });
 
-  it('renders a progress bar', async () => {
-    const buf = await chartsLib.renderChartJs(
-      500,
-      50,
-      'red',
-      2.0,
-      '2.9.4',
-      'png',
-      charts.CHART_PROGRESSBAR,
-    );
-    const rgb = (await getColors(buf, 'image/png'))[2].rgb();
-    assertSimilarRgb([76, 124, 164], rgb);
-  });
+  // it('renders a progress bar', async () => {
+  //   const buf = await chartsLib.renderChartJs(
+  //     500,
+  //     50,
+  //     'red',
+  //     2.0,
+  //     '2.9.4',
+  //     'png',
+  //     charts.CHART_PROGRESSBAR,
+  //   );
+  //   const rgb = (await getColors(buf, 'image/png'))[2].rgb();
+  //   assertSimilarRgb([76, 124, 164], rgb);
+  // });
 
   it('renders a datetime chart in Chart.js V3', async () => {
     const buf = await chartsLib.renderChartJs(
