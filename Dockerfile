@@ -55,7 +55,8 @@ RUN apk update && \
     ttf-liberation \
     font-noto \
     font-noto-emoji && \
-    rm -rf /var/cache/apk/*
+    rm -rf /var/cache/apk/* && \
+    npm uninstall -g npm
 
 USER node
 
