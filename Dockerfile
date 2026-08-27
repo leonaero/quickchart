@@ -1,5 +1,5 @@
 # Build stage
-FROM node:22-alpine3.22
+FROM node:22-alpine3.24
 
 ENV NODE_ENV=production
 
@@ -37,7 +37,7 @@ RUN export NODE_ENV=development && \
 
 
 # Final stage
-FROM node:22-alpine3.22
+FROM node:22-alpine3.24
 
 COPY --from=0 /quickchart/dist/* /quickchart/dist/
 COPY --from=0 /quickchart/node_modules /quickchart/node_modules/

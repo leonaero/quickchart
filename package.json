@@ -1,6 +1,6 @@
 {
   "name": "quickchart",
-  "version": "1.0.9-leon",
+  "version": "1.0.10-leon",
   "main": "index.js",
   "license": "AGPL-3.0",
   "homepage": "https://quickchart.io/",
@@ -16,7 +16,8 @@
     "build": "webpack"
   },
   "resolutions": {
-    "canvas": "2.11.2"
+    "canvas": "2.11.2",
+    "@mapbox/node-pre-gyp": "^2.0.0"
   },
   "dependencies": {
     "bunyan": "^1.8.12",
